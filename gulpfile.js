@@ -22,7 +22,8 @@ gulp.task('build', function () {
 
 gulp.task('serve', ['build'], function () {
   browserSync.init({
-      server: { baseDir: './' }
+      server: { baseDir: './' },
+      startPath: 'example'
     })
 
   browserSync.watch('./dist/**', browserSync.reload)
