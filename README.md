@@ -43,4 +43,7 @@ $ npm install jquery-recital --save
   </script>
 ```
 
-**[This project is licensed under the terms of the MIT license.](license-me.herokuapp.com)**
+
+### License
+
+**[This project is licensed under the terms of the MIT license.](http://license-me.herokuapp.com)**
