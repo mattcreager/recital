@@ -1,0 +1,25 @@
+{
+  "name": "recital",
+  "version": "0.1.0",
+  "authors": [
+    "Matt Creager <creager@heroku.com>"
+  ],
+  "description": "Add a Table of Contents to a Vimeo Video with this jQuery plugin",
+  "keywords": [
+    "jquery-plugin",
+    "jquery",
+    "vimeo"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mattcreager/recital",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "player-api": "vimeo/player-api"
+  }
+}

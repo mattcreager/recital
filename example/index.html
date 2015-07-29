@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+          .recital .recital-toc li.recital-current {
+            background: red;
+          }
+
+          .recital .recital-toc {
+            float: right;
+            margin-right: 50px;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="recital">
+          <iframe class="recital-sc" src="https://player.vimeo.com/video/134665146?api=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+          <ul class="recital-toc">
+            <li><a href="#" data-seek-to="11.23">"start": "node index.js"</a></li>
+            <li><a href="#" data-seek-to="16.10">process.env.PORT</a></li>
+            <li><a href="#" data-seek-to="26.28">heroku create</a></li>
+            <li><a href="#" data-seek-to="30.18">git push heroku master</a></li>
+            <li><a href="#" data-seek-to="37.21">Node.js app detected</a></li>
+            <li><a href="#" data-seek-to="46.18">curl shielded-bastion-9999.herokuapp.com</a></li>
+          </ul>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../dist/jquery.recital.js"></script>
+        <script>
+          $(function() {
+            $('.recital').recital()
+          })
+        </script>
+    </body>
+</html>
