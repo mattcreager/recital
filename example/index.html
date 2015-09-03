@@ -1,98 +1,101 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-          li.recital-current {
-            background: red;
-          }
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Recital Dev Example</h1>
 
-          .recital .recital-toc {
-            float: right;
-            margin-right: 50px;
-          }
-        </style>
-    </head>
-    <body>
+      <br>
 
-        <div>
-          <ul id="vid-menu">
-            <li><a data-tab="0" href="#">One</a></li>
-            <li><a data-tab="1" href="#">Two</a></li>
-            <li><a data-tab="2" href="#">Three</a></li>
-          </ul>
+      <div id="vid-menu" class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+          <input value="0" type="radio" name="options" id="option1" autocomplete="off" checked> Video 1
+        </label>
+        <label class="btn btn-primary">
+          <input value="1" type="radio" name="options" id="option2" autocomplete="off"> Video 2
+        </label>
+        <label class="btn btn-primary">
+          <input value="2" type="radio" name="options" id="option3" autocomplete="off"> Video 3
+        </label>
+      </div>
 
-          <div class="recital">
-            <iframe id="wtf" class="recital-sc" src="https://player.vimeo.com/video/134665146?api=1&player_id=wtf" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <br>
 
-            <ul class="recital-toc">
-              <li><a href="#" data-seek-to="11.23">"start": "node index.js"</a></li>
-              <li><a href="#" data-seek-to="16.10">process.env.PORT</a></li>
-              <li><a href="#" data-seek-to="26.28">heroku create</a></li>
-              <li><a href="#" data-seek-to="30.18">git push heroku master</a></li>
-              <li><a href="#" data-seek-to="37.21">Node.js app detected</a></li>
-              <li><a href="#" data-seek-to="46.18">curl shielded-bastion-9999.herokuapp.com</a></li>
-            </ul>
-          </div>
+      <div class="recital row">
+        <iframe id="wtf" class="recital-sc col-sm-8" src="https://player.vimeo.com/video/134665146?api=1&player_id=wtf" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-          <div class="recital-2">
-            <iframe id="heyCowboy" class="recital-sc" src="https://player.vimeo.com/video/135538988?api=1&player_id=heyCowboy" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <ul class="recital-toc list-unstyled col-sm-4">
+          <li><a href="#" data-seek-to="11.23">"start": "node index.js"</a></li>
+          <li><a href="#" data-seek-to="16.10">process.env.PORT</a></li>
+          <li><a href="#" data-seek-to="26.28">heroku create</a></li>
+          <li><a href="#" data-seek-to="30.18">git push heroku master</a></li>
+          <li><a href="#" data-seek-to="37.21">Node.js app detected</a></li>
+          <li><a href="#" data-seek-to="46.18">curl shielded-bastion-9999.herokuapp.com</a></li>
+        </ul>
+      </div>
 
-            <ul class="recital-toc">
-              <li><a href="#" data-seek-to="5">"start": "node index.js"</a></li>
-              <li><a href="#" data-seek-to="7">process.env.PORT</a></li>
-              <li><a href="#" data-seek-to="9">heroku create</a></li>
-              <li><a href="#" data-seek-to="30.18">git push heroku master</a></li>
-              <li><a href="#" data-seek-to="37.21">Node.js app detected</a></li>
-              <li><a href="#" data-seek-to="46.18">curl shielded-bastion-9999.herokuapp.com</a></li>
-            </ul>
-          </div>
+      <div class="recital-2 row">
+        <iframe id="heyCowboy" class="recital-sc col-sm-8" src="https://player.vimeo.com/video/135538988?api=1&player_id=heyCowboy" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-          <div class="recital-3">
-            <iframe id="wohBoy" class="recital-sc" src="https://player.vimeo.com/video/135538988?api=1&player_id=wohBoy" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <ul class="recital-toc list-unstyled col-sm-4">
+          <li><a href="#" data-seek-to="5">"start": "node index.js"</a></li>
+          <li><a href="#" data-seek-to="7">process.env.PORT</a></li>
+          <li><a href="#" data-seek-to="9">heroku create</a></li>
+          <li><a href="#" data-seek-to="30.18">git push heroku master</a></li>
+          <li><a href="#" data-seek-to="37.21">Node.js app detected</a></li>
+          <li><a href="#" data-seek-to="46.18">curl shielded-bastion-9999.herokuapp.com</a></li>
+        </ul>
+      </div>
 
-            <ul class="recital-toc">
-              <li><a href="#" data-seek-to="5">"woh": "woh"</a></li>
-              <li><a href="#" data-seek-to="7">process.env.PORT</a></li>
-              <li><a href="#" data-seek-to="9">heroku create</a></li>
-              <li><a href="#" data-seek-to="30.18">git push heroku master</a></li>
-              <li><a href="#" data-seek-to="37.21">Node.js app detected</a></li>
-              <li><a href="#" data-seek-to="46.18">curl shielded-bastion-9999.herokuapp.com</a></li>
-            </ul>
-          </div>
-        </div>
+      <div class="recital-3 row">
+        <iframe id="wohBoy" class="recital-sc col-sm-8" src="https://player.vimeo.com/video/135538988?api=1&player_id=wohBoy" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-        <script src="jquery.recital.js"></script>
-        <script>
-          $(function() {
-            var recitals = [];
+        <ul class="recital-toc list-unstyled col-sm-4">
+          <li><a href="#" data-seek-to="5">"woh": "woh"</a></li>
+          <li><a href="#" data-seek-to="7">process.env.PORT</a></li>
+          <li><a href="#" data-seek-to="9">heroku create</a></li>
+          <li><a href="#" data-seek-to="30.18">git push heroku master</a></li>
+          <li><a href="#" data-seek-to="37.21">Node.js app detected</a></li>
+          <li><a href="#" data-seek-to="46.18">curl shielded-bastion-9999.herokuapp.com</a></li>
+        </ul>
+      </div>
+    </div>
 
-            recitals.push($('.recital').recital())
-            recitals.push($('.recital-2').recital())
-            recitals.push($('.recital-3').recital())
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="jquery.recital.js"></script>
+    <script>
+      $(function() {
+        var recitals = [];
 
-            recitals[1].hide()
-            recitals[2].hide()
+        recitals.push($('.recital').recital())
+        recitals.push($('.recital-2').recital())
+        recitals.push($('.recital-3').recital())
 
-            var current = 0
+        recitals[1].hide()
+        recitals[2].hide()
 
-            $('#vid-menu a').on('click', function(e) {
-              e.preventDefault();
+        var current = 0
 
-              if ($(e.target).data('tab') === current) return
+        $('#vid-menu input').on('change', function(e) {
+          e.preventDefault();
+          console.log($(e.target))
+          if ($(e.target).val() === current) return
 
-              recitals[current].hide()
-              // also need to pause
-              current = $(e.target).data('tab')
-              // also need to resume
-              recitals[current].show()
-            })
-          })
-        </script>
-    </body>
+          recitals[current].hide()
+          // also need to pause
+          current = $(e.target).val()
+          // also need to resume
+          recitals[current].show()
+        })
+      })
+    </script>
+  </body>
 </html>
