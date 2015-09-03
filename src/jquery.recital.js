@@ -78,7 +78,7 @@
     var newBookmark = this.toc
       .map(function (index, el) { return +$(el).data('seek-to') })
       .toArray().reduce(function (accum, seconds, index) {
-        if (!seconds) return accum
+        if (!$.isNumeric(seconds)) return accum
         accum = data.seconds < seconds ? accum : index
 
         return accum
