@@ -29,6 +29,16 @@
 
     var _this = this
 
+    this.element.on('show', function() {
+      _this.isPlaying = true
+      _this.player.api('play')
+    })
+
+    this.element.on('hide', function() {
+      _this.isPlaying = false
+      _this.player.api('pause')
+    })
+
     $(window).on('scroll', function() {
       var nowVisible = _this.element.find('iframe').visible()
 

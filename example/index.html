@@ -30,7 +30,7 @@
       <br>
 
       <div class="recital row">
-        <iframe id="wtf" class="recital-sc col-sm-8" src="https://player.vimeo.com/video/134665146?api=1&player_id=wtf" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="wtf" class="recital-sc col-sm-8" src="https://player.vimeo.com/video/134665146?autoplay=1api=1&player_id=wtf" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
         <ul class="recital-toc list-unstyled col-sm-4">
           <li><a href="#" data-seek-to="11.23">"start": "node index.js"</a></li>
@@ -90,10 +90,12 @@
           if ($(e.target).val() === current) return
 
           recitals[current].hide()
+          recitals[current].trigger('hide')
           // also need to pause
           current = $(e.target).val()
           // also need to resume
           recitals[current].show()
+          recitals[current].trigger('show')
         })
       })
     </script>
