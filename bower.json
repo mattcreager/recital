@@ -20,6 +20,7 @@
     "tests"
   ],
   "dependencies": {
+    "df-visible": "customd/jquery-visible#~1.2.0",
     "player-api": "vimeo/player-api"
   }
 }

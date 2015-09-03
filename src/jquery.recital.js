@@ -8,7 +8,11 @@
 
 ;(function ($, window, document) {
   var pluginName = 'recital'
-  var defaults = { tocClass: '.recital-toc', currentBookmark: -1 }
+  var defaults = {
+    tocClass: '.recital-toc',
+    currentBookmark: -1,
+    isPlaying: false
+  }
 
   function Plugin (element, options) {
     this.element = $(element)
@@ -24,6 +28,26 @@
     this.toc = this.element.find(this.options.tocClass + ' a')
 
     var _this = this
+
+    $(window).on('scroll', function() {
+      var nowVisible = _this.element.find('iframe').visible()
+
+      if (!nowVisible && !_this.isPlaying) return
+      if (nowVisible && _this.isPlaying) return
+
+      if (!nowVisible && _this.isPlaying) {
+        _this.isPlaying = false
+        _this.player.api('pause')
+
+        return
+      }
+
+      if (nowVisible && !_this.isPlaying) {
+        _this.isPlaying = true
+        _this.player.api('play')
+      }
+    })
+
     this.player.addEvent('ready', function () {
       _this.player.addEvent('playProgress', _this.onPlayProgress.bind(_this))
       _this.player.addEvent('finish', _this.clearCurrent.bind(_this))
@@ -32,9 +56,10 @@
   }
 
   Plugin.prototype.onClickBookmark = function (e) {
-    this.player.api('seekTo', $(e.target).data('seek-to'))
-    this.setCurrent(e.target)
+    var seekTo = $(e.target).closest('a').data('seek-to')
 
+    this.player.api('seekTo', seekTo)
+    this.setCurrent(e.target)
     e.preventDefault()
   }
 
@@ -43,6 +68,7 @@
     var newBookmark = this.toc
       .map(function (index, el) { return +$(el).data('seek-to') })
       .toArray().reduce(function (accum, seconds, index) {
+        if (!seconds) return accum
         accum = data.seconds < seconds ? accum : index
 
         return accum
